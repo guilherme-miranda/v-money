@@ -57,7 +57,7 @@ export default {
     value: {
       immediate: true,
       handler (newValue, oldValue) {
-        var formatted = format(newValue, this.$props)
+        var formatted = format(Number(newValue).toFixed(this.precision), this.$props)
         if (formatted !== this.formattedValue) {
           this.formattedValue = formatted
         }

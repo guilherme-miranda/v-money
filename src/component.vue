@@ -1,5 +1,6 @@
 <template lang="html">
-  <input type="tel"
+  <input :type="fieldType"
+         inputmode="decimal"
          :value="formattedValue"
          @change="change"
          v-money="{precision, decimal, thousands, prefix, suffix}"
@@ -42,6 +43,10 @@ export default {
     suffix: {
       type: String,
       default: () => defaults.suffix
+    },
+    fieldType: {
+      type: String,
+      default: 'tel'
     }
   },
 
